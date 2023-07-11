@@ -29,12 +29,12 @@
 }
 
 canvas{
-    width: 50%;
-    height: 73%;
+    width: 775px;
+    height: 535px;
     position: absolute;
 
     top: 18%;
-    left: 25%;
+    left: 24.5%;
 
     background-color: white;
     border-radius: 15px;

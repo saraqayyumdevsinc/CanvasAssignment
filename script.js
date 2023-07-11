@@ -1,28 +1,52 @@
 $(document).ready(function() {
     $('.tool-item img').on('mouseenter', function() {
-        $(this).siblings('.tool-colors').css('display', 'flex');
+      $(this).siblings('.tool-colors').css('display', 'flex');
     });
 
     $('.tool-item').on('mouseleave', function() {
-        $(this).find('.tool-colors').css('display', 'none');
+      $(this).find('.tool-colors').css('display', 'none');
     });
 
-    var canvas = document.querySelector("canvas"); // Use querySelector instead of getElementsByTagName
-    console.log(canvas);
+    var canvas = document.querySelector("canvas");
     var context = canvas.getContext("2d");
-    console.log(context);
-    var boundings = canvas.getBoundingClientRect();
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
 
+
+    //Adding some default values
     var mouseX = 0;
     var mouseY = 0;
-    context.strokeStyle = 'black'; // initial brush color
-    context.lineWidth = 1; // initial brush width
+    context.strokeStyle = 'black';
+    context.lineWidth = 1;
+
     var isDrawing = false;
 
-    // Handle Colors
-    var colors = document.getElementsByClassName('color-option');
+    $('.color-option').on('click', function() {
+        context.strokeStyle = $(this).css('background-color');
+      });
 
-    colors.addEventListener('click', function(event) {
-    context.strokeStyle = event.target.value || 'black';
+
+    canvas.addEventListener('mousedown', function(event) {
+        isDrawing = true;
+
+        var rect = canvas.getBoundingClientRect();
+        mouseX = event.clientX - rect.left;
+        mouseY = event.clientY - rect.top;
+        context.beginPath();
+        context.moveTo(mouseX, mouseY);
+    });
+
+    canvas.addEventListener('mousemove', function(event) {
+        if (isDrawing) {
+            var rect = canvas.getBoundingClientRect();
+            mouseX = event.clientX - rect.left;
+            mouseY = event.clientY - rect.top;
+            context.lineTo(mouseX, mouseY);
+            context.stroke();
+        }
+    });
+
+    canvas.addEventListener('mouseup', function() {
+        isDrawing = false;
+    });
   });
-});
