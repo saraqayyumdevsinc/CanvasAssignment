@@ -1,64 +1,91 @@
 $(document).ready(function() {
-    var canvas = document.querySelector("canvas");
-    var context = canvas.getContext("2d");
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+    (function() {
+        var canvas = document.querySelector("canvas");
+        var context = canvas.getContext("2d");
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
 
-    //Adding some default values
-    var mouseX = 0;
-    var mouseY = 0;
-    context.strokeStyle = 'black';
-    context.lineWidth = 1;
+        //Adding some default values
+        var mouseX = 0;
+        var mouseY = 0;
 
-    var isDrawing = false;
+        var isDrawingPencil = false;
+        var isDrawingCrayon = false;
+        var isDrawingPaint = false;
 
-    $('.color-option').on('click', function() {
-        context.strokeStyle = $(this).css('background-color');
-    });
+        $('.color-option').on('click', function() {
+            context.strokeStyle = $(this).css('background-color');
+        });
 
-    $('.eraser').on('click', function() {
-        context.strokeStyle = 'white';
-    });
+        $('.eraser').on('click', function() {
+            context.strokeStyle = 'white';
+        });
 
-    $('.saver').on('click', function() {
-        let canvasUrl = canvas.toDataURL();
-        // Create an anchor, and set the href value to our data URL
-        const createEl = document.createElement('a');
-        createEl.href = canvasUrl;
+        $('.pencil').on('click', function() {
+            isDrawingPencil = true;
+            isDrawingCrayon = false;
+            isDrawingPaint = false;
+        });
 
-        // This is the name of our downloaded file
-        createEl.download = "download-this-canvas";
+        $('.crayon').on('click', function() {
+            isDrawingPencil = false;
+            isDrawingCrayon = true;
+            isDrawingPaint = false;
+        });
 
-        // Click the download button, causing a download, and then remove it
-        createEl.click();
-        createEl.remove();
-    });
+        $('.paint').on('click', function() {
+            isDrawingPencil = false;
+            isDrawingCrayon = false;
+            isDrawingPaint = true;
+        });
 
+        $('.saver').on('click', function() {
+            let canvasUrl = canvas.toDataURL();
+            const createEl = document.createElement('a');
+            createEl.href = canvasUrl;
+            createEl.download = "download-this-pretty-canvas";
+            createEl.click();
+            createEl.remove();
+        });
 
-    canvas.addEventListener('mousedown', function(event) {
-        isDrawing = true;
-
-        var rect = canvas.getBoundingClientRect();
-        mouseX = event.clientX - rect.left;
-        mouseY = event.clientY - rect.top;
-        context.beginPath();
-        context.moveTo(mouseX, mouseY);
-    });
-
-    canvas.addEventListener('mousemove', function(event) {
-        if (isDrawing) {
+        canvas.addEventListener('mousedown', function(event) {
             var rect = canvas.getBoundingClientRect();
             mouseX = event.clientX - rect.left;
             mouseY = event.clientY - rect.top;
-            context.lineTo(mouseX, mouseY);
-            context.stroke();
-        }
-    });
+            context.beginPath();
+            context.moveTo(mouseX, mouseY);
+        });
 
-    canvas.addEventListener('mouseup', function() {
-        isDrawing = false;
-    });
+        canvas.addEventListener('mousemove', function(event) {
+            if (isDrawingPencil) {
+                context.lineWidth = 2;
+            }
 
-    // var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");  // here is the most important part because if you dont replace you will get a DOM 18 exception.
-    // window.location.href=image;
-  });
+            if (isDrawingCrayon) {
+                context.lineWidth = 10;
+                context.lineJoin = 'round';
+                context.lineCap = 'round';
+            }
+
+            if (isDrawingPaint) {
+                context.lineWidth = 20;
+                context.lineJoin = 'round';
+                context.lineCap = 'square';
+            }
+
+                var rect = canvas.getBoundingClientRect();
+                mouseX = event.clientX - rect.left;
+                mouseY = event.clientY - rect.top;
+                context.lineTo(mouseX, mouseY);
+                context.stroke();
+
+            context.lineWidth = 0;
+        });
+
+        canvas.addEventListener('mouseup', function() {
+            isDrawingPencil = false;
+            isDrawingCrayon = false;
+            isDrawingPaint = false;
+        });
+    })();
+});
