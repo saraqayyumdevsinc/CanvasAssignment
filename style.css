@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(45355.jpg);
+    background-position-y: 15%;
+    background-size: cover;
+}
