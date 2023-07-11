@@ -3,8 +3,89 @@
     padding: 0;
 }
 
-body{
+.background{
     background-image: url(45355.jpg);
-    background-position-y: 15%;
+    background-position-y: 55%;
     background-size: cover;
+
+    opacity: 0.6;
+    height: 100vh;
+    width: 100vw;
+
+    position: absolute;
+    z-index: -1;
+}
+
+.tool-bar{
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+
+img{
+    width: 5%;
+    height: 5%;
+    margin: 2%;
+}
+
+img:hover {
+    filter: drop-shadow(0 0 0.75rem rgb(179, 203, 222));
+}
+
+.tool-colors {
+    display: none;
+    flex-direction: row;
+    transition: cubic-bezier();
+}
+
+
+.color-option {
+
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+#option1 {
+    opacity: 0.5;
+    background-color: red;
+}
+
+#option2 {
+    opacity: 0.5;
+    background-color: blue;
+}
+
+#option3 {
+    opacity: 0.5;
+    background-color: green;
+}
+
+#option4 {
+    opacity: 0.5;
+    background-color:  yellow;
+}
+
+#option5 {
+    opacity: 0.5;
+    background-color: black;
+}
+
+#option6 {
+    opacity: 0.5;
+    background-color: white;
+}
+
+#option1:hover, #option2:hover, #option3:hover, #option4:hover, #option5:hover, #option6:hover {
+    opacity: 1;
+    border: 2px solid wheat;
 }
