@@ -16,10 +16,6 @@
     z-index: -1;
 }
 
-.tool-bar{
-    display: flex;
-    flex-direction: column;
-}
 
 .tool-item{
     display: flex;
@@ -50,13 +46,6 @@ img{
 img:hover {
     filter: drop-shadow(0 0 0.75rem rgb(179, 203, 222));
 }
-
-.tool-colors {
-    display: none;
-    flex-direction: row;
-    transition: cubic-bezier();
-}
-
 
 .color-option {
 

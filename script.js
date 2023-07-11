@@ -1,17 +1,8 @@
 $(document).ready(function() {
-    $('.tool-item img').on('mouseenter', function() {
-      $(this).siblings('.tool-colors').css('display', 'flex');
-    });
-
-    $('.tool-item').on('mouseleave', function() {
-      $(this).find('.tool-colors').css('display', 'none');
-    });
-
     var canvas = document.querySelector("canvas");
     var context = canvas.getContext("2d");
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
-
 
     //Adding some default values
     var mouseX = 0;
