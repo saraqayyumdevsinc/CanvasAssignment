@@ -13,11 +13,23 @@ $(document).ready(function() {
     var isDrawingCrayon = false;
     var isDrawingPaint = false;
 
+    $(window).on('load', function() {
+        canvasHeight = canvas.offsetHeight;
+        canvasWidth = canvas.offsetWidth;
+    });
+
+    $(window).on('resize', function() {
+        canvasHeight = canvas.offsetHeight;
+        canvasWidth = canvas.offsetWidth;
+    });
+
+
     $('.color-option').on('click', function() {
         context.strokeStyle = $(this).css('background-color');
     });
 
     $('.eraser').on('click', function() {
+        context.lineWidth = 10;
         context.strokeStyle = 'white';
     });
 
@@ -64,6 +76,23 @@ $(document).ready(function() {
             };
         };
         reader.readAsDataURL(file);
+    });
+
+    $('.text').on('click', function() {
+        var header= prompt("Enter title");
+
+        context.font = "bold 20px Arial";
+        context.textAlign = 'center';
+        context.fillText(header, (canvas.width / 2), (25));
+
+        var footer= prompt("Enter footer");
+        context.font = "15px Arial";
+        context.textAlign = 'center';
+        context.fillText(header, (canvas.width / 2), (canvas.height - 10));
+    });
+
+    $('.clear').on('click', function() {;
+        context.clearRect(0, 0, canvas.width, canvas.height);
     });
 
     canvas.addEventListener('mousedown', function(event) {
