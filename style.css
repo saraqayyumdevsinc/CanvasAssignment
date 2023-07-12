@@ -106,7 +106,8 @@ img:hover {
 
     canvas{
         border: 4px solid lightgray;
-        width: 80%;
+        top: 30px;
+        width: 70%;
         height: 900px;
         margin-right: 60%;
     }
@@ -128,7 +129,7 @@ img:hover {
         top: 30px;
         right: 30px;
         border: 4px solid lightgray;
-        width: 80%;
+        width: 70%;
         height: 600px;
     }
 }

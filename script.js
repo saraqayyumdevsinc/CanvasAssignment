@@ -88,7 +88,7 @@ $(document).ready(function() {
         var footer= prompt("Enter footer");
         context.font = "15px Arial";
         context.textAlign = 'center';
-        context.fillText(header, (canvas.width / 2), (canvas.height - 10));
+        context.fillText(footer, (canvas.width / 2), (canvas.height - 10));
     });
 
     $('.clear').on('click', function() {;
