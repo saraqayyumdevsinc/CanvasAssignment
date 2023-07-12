@@ -21,8 +21,8 @@
 
 
 canvas{
-    width: 775px;
-    height: 535px;
+    width: 765px;
+    height: 520px;
     position: absolute;
 
     top: 20%;
@@ -35,9 +35,9 @@ canvas{
 }
 
 img{
-    width: 5%;
-    height: 5%;
-    margin: 3% 0% 1% 4%;
+    width: 80px;
+    height: 80px;
+    margin: 40px 0% 18px 70px;
 }
 
 img:hover {

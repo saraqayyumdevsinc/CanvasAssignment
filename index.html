@@ -14,52 +14,59 @@
 <body>
 
     <div class="background"></div>
-    <div class="tool-bar">
-        <div class="tool-item d-flex">
-            <img class="pencil" data-bs-toggle="collapse" data-bs-target="#pencil" src="Icons/colored-pencils.png">
-            <div id="pencil" class="collapse">
-                <div class="color-option" id="option1"></div>
-                <div class="color-option" id="option2"></div>
-                <div class="color-option" id="option3"></div>
-                <div class="color-option" id="option4"></div>
-                <div class="color-option" id="option5"></div>
-                <div class="color-option" id="option6"></div>
+    <div class="d-flex justify-content-between">
+        <div class="tool-bar ">
+            <div class="tool-item d-flex">
+                <img class="pencil" data-bs-toggle="collapse" data-bs-target="#pencil" src="Icons/colored-pencils.png">
+                <div id="pencil" class="collapse">
+                    <div class="color-option" id="option1"></div>
+                    <div class="color-option" id="option2"></div>
+                    <div class="color-option" id="option3"></div>
+                    <div class="color-option" id="option4"></div>
+                    <div class="color-option" id="option5"></div>
+                    <div class="color-option" id="option6"></div>
+                </div>
             </div>
+
+            <div class="tool-item d-flex">
+                <img class="crayon" data-bs-toggle="collapse" data-bs-target="#crayon" src="Icons/crayon.png">
+                <div id="crayon" class="collapse">
+                    <div class="color-option" id="option1"></div>
+                    <div class="color-option" id="option2"></div>
+                    <div class="color-option" id="option3"></div>
+                    <div class="color-option" id="option4"></div>
+                    <div class="color-option" id="option5"></div>
+                    <div class="color-option" id="option6"></div>
+                </div>
+            </div>
+
+            <div class="tool-item d-flex">
+                <img class="paint" data-bs-toggle="collapse" data-bs-target="#paint" src="Icons/color-palette.png">
+                <div id="paint" class="collapse">
+                    <div class="color-option" id="option1"></div>
+                    <div class="color-option" id="option2"></div>
+                    <div class="color-option" id="option3"></div>
+                    <div class="color-option" id="option4"></div>
+                    <div class="color-option" id="option5"></div>
+                    <div class="color-option" id="option6"></div>
+                </div>
+            </div>
+
+            <img class="eraser" src="Icons/eraser.png">
         </div>
 
-        <div class="tool-item d-flex">
-            <img class="crayon" data-bs-toggle="collapse" data-bs-target="#crayon" src="Icons/crayon.png">
-            <div id="crayon" class="collapse">
-                <div class="color-option" id="option1"></div>
-                <div class="color-option" id="option2"></div>
-                <div class="color-option" id="option3"></div>
-                <div class="color-option" id="option4"></div>
-                <div class="color-option" id="option5"></div>
-                <div class="color-option" id="option6"></div>
-            </div>
-        </div>
-
-        <div class="tool-item d-flex">
-            <img class="paint" data-bs-toggle="collapse" data-bs-target="#paint" src="Icons/color-palette.png">
-            <div id="paint" class="collapse">
-                <div class="color-option" id="option1"></div>
-                <div class="color-option" id="option2"></div>
-                <div class="color-option" id="option3"></div>
-                <div class="color-option" id="option4"></div>
-                <div class="color-option" id="option5"></div>
-                <div class="color-option" id="option6"></div>
-            </div>
+        <div class="tool-bar-right px-5">
+            <img class="saver" src="Icons/floppy-disk.png">
+            <br>
+            <img class="upload" src="Icons/upload.png">
+            <input class="upload-file d-none" type="file">
+            <br>
+            <img class="text" src="Icons/analytics.png">
+            <br>
+            <img class="clean" src="Icons/recycle-bin.png">
         </div>
     </div>
-
-    <img class="eraser" src="Icons/eraser.png">
-    <br>
-    <img class="saver" src="Icons/floppy-disk.png">
-
-
     <canvas></canvas>
-
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
