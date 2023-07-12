@@ -97,7 +97,7 @@ img:hover {
 
 @media (max-width:1270px) {
     .background{
-        background-image: url(alt-bg.jpg);
+        background-image: url(alt-bg-tab.jpg);
     }
 
     .contain{
@@ -107,7 +107,28 @@ img:hover {
     canvas{
         border: 4px solid lightgray;
         width: 80%;
-        height: 90%;
-        margin-right: 10%;
+        height: 900px;
+        margin-right: 60%;
+    }
+}
+
+@media (max-width:739px) {
+
+    .background{
+        background-image: url(alt-bg.jpg);
+    }
+
+    img{
+        width: 10%;
+        height: 10%;
+        margin: 2% 0% 1% 4%;
+    }
+
+    canvas{
+        top: 30px;
+        right: 30px;
+        border: 4px solid lightgray;
+        width: 80%;
+        height: 600px;
     }
 }
