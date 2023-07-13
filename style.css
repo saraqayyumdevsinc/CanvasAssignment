@@ -4,7 +4,7 @@
 }
 
 .background {
-    background-image: url(45355.jpg);
+    background-image: url(Backgrounds/45355.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -117,7 +117,7 @@ img:hover {
 
 @media (max-width:1528px) {
     .background{
-        background-image: url(alt-bg-tab.jpg);
+        background-image: url(Backgrounds/alt-bg-tab.jpg);
     }
 
     .contain {
@@ -168,7 +168,7 @@ img:hover {
 @media (max-width:880px) {
 
     .background{
-        background-image: url(alt-bg.jpg);
+        background-image: url(Backgrounds/alt-bg.jpg);
     }
 
     .contain {
