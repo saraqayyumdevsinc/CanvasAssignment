@@ -100,6 +100,11 @@ $(document).ready(function() {
         if (!((windowWidth <= 1270 && windowWidth > 880) || windowWidth >= 1270)) {
             $('.my-toggler').css('display', 'block');
         }
+        else{
+            if ($('#icon-container').hasClass('show')) {
+                $('.my-toggler').css('display', 'none');
+            }
+        }
     });
 
 
