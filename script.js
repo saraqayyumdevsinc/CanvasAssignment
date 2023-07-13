@@ -97,7 +97,7 @@ $(document).ready(function() {
 
     $(window).on('resize', function() {
         var windowWidth = window.innerWidth;
-        if (!((windowWidth <= 1270 && windowWidth > 880) || windowWidth >= 1270)) {
+        if (!((windowWidth <= 1528 && windowWidth > 880) || windowWidth >= 1528)) {
             $('.my-toggler').css('display', 'block');
         }
         else{
@@ -110,7 +110,7 @@ $(document).ready(function() {
 
     $('.my-toggler').on('click', function(){
         var windowWidth = window.innerWidth;
-        if( windowWidth <=1270 && windowWidth>880){
+        if( windowWidth <=1528 && windowWidth>880){
             $(this).css('display','none')
         }
     })
@@ -168,7 +168,7 @@ $(document).ready(function() {
         var iconContainer = document.querySelector('#icon-container');
         var contain = document.querySelector('.justify-content-between')
 
-        if (windowWidth <= 1270) {
+        if (windowWidth <= 1528) {
             imgElement.classList.remove('d-none');
             imgElement.classList.add('collapsed')
             iconContainer.classList.add('collapse')
@@ -188,7 +188,7 @@ $(document).ready(function() {
         var iconContainer = document.querySelector('#icon-container');
         var contain = document.querySelector('.justify-content-between')
 
-        if (windowWidth <= 1270) {
+        if (windowWidth <= 1528) {
             imgElement.classList.remove('d-none');
             imgElement.classList.add('collapsed')
             iconContainer.classList.add('collapse')

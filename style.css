@@ -193,7 +193,7 @@ img:hover {
     }
 
     .tool-bar-right{
-        transform: translateX(10%);
+        transform: translateX(15%);
     }
 
     .my-toggler{
@@ -207,7 +207,7 @@ img:hover {
     .my-toggler{
         position: absolute;
         bottom: 18%;
-        left: 40%;
+        left: 43%;
     }
 
     canvas{
@@ -216,12 +216,12 @@ img:hover {
         margin-left: 0;
         width: 90%;
         height: 70%;
-        left: 5%;
+        left: 6%;
     }
 
     img{
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         margin-bottom: 0;
     }
 
