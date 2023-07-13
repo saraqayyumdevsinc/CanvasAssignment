@@ -155,7 +155,6 @@ img:hover {
 
     .contain {
         transform: translateX(-50%);
-        flex-direction: column;
       }
 
 
@@ -176,6 +175,12 @@ img:hover {
 
     .tool-bar-right{
         transform: translateX(10%);
+    }
+
+    .my-toggler{
+        position: absolute;
+        bottom: 15%;
+        left: 40%;
     }
 }
 
@@ -199,5 +204,9 @@ img:hover {
         width: 40px;
         height: 40px;
         margin-bottom: 0;
+    }
+
+    .contain{
+        flex-direction: column;
     }
 }
