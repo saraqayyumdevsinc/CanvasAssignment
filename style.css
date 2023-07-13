@@ -134,6 +134,7 @@ img:hover {
 
     .tool-bar-right{
         display: flex;
+        margin-top: 5%;
     }
 
     .tool-item{

@@ -186,7 +186,7 @@ $(document).ready(function() {
         var windowWidth = window.innerWidth;
         var imgElement = document.querySelector('img[data-bs-target="#icon-container"]');
         var iconContainer = document.querySelector('#icon-container');
-        var contain = document.querySelector('.justify-content-between')
+        var contain = document.querySelector('.justify-content-between');
 
         if (windowWidth <= 1528) {
             imgElement.classList.remove('d-none');
