@@ -135,6 +135,7 @@ img:hover {
     .my-toggler{
         position: absolute;
         bottom: 30px;
+        left: 45%;
     }
 
     canvas{
@@ -181,7 +182,7 @@ img:hover {
 @media screen and (max-width:500px) {
     .my-toggler{
         position: absolute;
-        bottom: 150px;
+        bottom: 18%;
         left: 40%;
     }
 

@@ -95,6 +95,30 @@ $(document).ready(function() {
         context.clearRect(0, 0, canvas.width, canvas.height);
     });
 
+    $('.my-toggler').on('resize', function(){
+        var windowWidth = window.innerWidth;
+        if( windowWidth <=1270 && windowWidth >=500){
+            if($(this).css('left') === '0px'){
+                $(this).css('left', "45%");
+            }
+            else{
+                $(this).css('left', 0);
+            }
+        }
+    })
+
+    $('.my-toggler').on('click', function(){
+        var windowWidth = window.innerWidth;
+        if( windowWidth <=1270 && windowWidth >500){
+            if($(this).css('left') === '0px'){
+                $(this).css('left', "45%");
+            }
+            else{
+                $(this).css('left', 0);
+            }
+        }
+    })
+
     canvas.addEventListener('mousedown', function(event) {
         isDrawing = true;
         var rect = canvas.getBoundingClientRect();
