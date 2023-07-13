@@ -229,3 +229,9 @@ img:hover {
         flex-direction: column;
     }
 }
+
+@media (max-width:441px) {
+    .tool-bar-right{
+        width: 80%;
+    }
+}
