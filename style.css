@@ -215,7 +215,7 @@ img:hover {
 @media screen and (max-width:769px) {
     .my-toggler{
         position: absolute;
-        bottom: 18%;
+        bottom: 20%;
         left: 41%;
     }
 
@@ -224,7 +224,7 @@ img:hover {
         border: 4px solid lightgray;
         margin-left: 0;
         width: 90%;
-        height: 70%;
+        height: 67%;
         left: 6%;
     }
 
