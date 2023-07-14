@@ -13,21 +13,26 @@ $(document).ready(function() {
     var isDrawingCrayon = false;
     var isDrawingPaint = false;
 
+
+    //On loading, we calibrate the canvas size
     $(window).on('load', function() {
         canvasHeight = canvas.offsetHeight;
         canvasWidth = canvas.offsetWidth;
     });
 
+    //On resizing, we re-calibrate the canvas size
     $(window).on('resize', function() {
         canvasHeight = canvas.offsetHeight;
         canvasWidth = canvas.offsetWidth;
     });
 
 
+    //Changing color
     $('.color-option').on('click', function() {
         context.strokeStyle = $(this).css('background-color');
     });
 
+    //White color addition for eraser effect
     $('.eraser').on('click', function() {
         context.lineWidth = 10;
         context.strokeStyle = 'white';
@@ -51,6 +56,7 @@ $(document).ready(function() {
         isDrawingPaint = true;
     });
 
+    //Saving image functionality
     $('.saver').on('click', function() {
         let canvasUrl = canvas.toDataURL();
         const createEl = document.createElement('a');
@@ -60,10 +66,12 @@ $(document).ready(function() {
         createEl.remove();
     });
 
+    //Triggering file prompt on clicking upload image icon
     $('.upload').click(function() {
         $('.upload-file').trigger('click');
     });
 
+    //Uploading image functionality
     $('.upload-file').on('change', function() {
         var file = this.files[0];
         var reader = new FileReader();
@@ -78,6 +86,8 @@ $(document).ready(function() {
         reader.readAsDataURL(file);
     });
 
+
+    //Adding text functionality (header - footer)
     $('.text').on('click', function() {
         var header= prompt("Enter title");
 
@@ -91,10 +101,12 @@ $(document).ready(function() {
         context.fillText(footer, (canvas.width / 2), (canvas.height - 10));
     });
 
+    //Clearing canvas functionality
     $('.clear').on('click', function() {;
         context.clearRect(0, 0, canvas.width, canvas.height);
     });
 
+    //Toggling the icon container for medium screen
     $(window).on('resize', function() {
         var windowWidth = window.innerWidth;
         if (!((windowWidth <= 1528 && windowWidth > 880) || windowWidth >= 1528)) {
@@ -108,6 +120,7 @@ $(document).ready(function() {
     });
 
 
+    //Removing toggle icon for medium screen
     $('.my-toggler').on('click', function(){
         var windowWidth = window.innerWidth;
         if( windowWidth <=1528 && windowWidth>880){
@@ -115,6 +128,7 @@ $(document).ready(function() {
         }
     })
 
+    //Drawing functionality
     canvas.addEventListener('mousedown', function(event) {
         isDrawing = true;
         var rect = canvas.getBoundingClientRect();
@@ -162,6 +176,7 @@ $(document).ready(function() {
     });
 
 
+    //Toggle icon functionality added for medium and small screens
     function handleResize() {
         var windowWidth = window.innerWidth;
         var imgElement = document.querySelector('img[data-bs-target="#icon-container"]');
