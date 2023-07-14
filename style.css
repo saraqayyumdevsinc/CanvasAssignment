@@ -1,10 +1,249 @@
+
+/*Reset*/
 *{
     margin: 0;
     padding: 0;
 }
 
-body{
-    background-image: url(45355.jpg);
-    background-position-y: 15%;
+.background {
+    background-image: url(Backgrounds/45355.jpg);
+    background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
+
+    opacity: 0.7;
+    height: 100%;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.tool-bar-right{
+    padding-right: 3%;
+}
+
+canvas{
+    width: 60%;
+    height: 75%;
+    position: absolute;
+
+    top: 19%;
+    left: 20%;
+
+    border: 5px solid #C89B86;
+    background-color: white;
+    border-radius: 15px;
+    cursor: crosshair;
+}
+
+img{
+    width: 80px;
+    height: 80px;
+    margin: 40px 0% 18px 70px;
+}
+
+img:hover {
+    filter: drop-shadow(0 0 0.75rem rgb(179, 203, 222));
+}
+
+/*Coloring options*/
+
+.color-option {
+
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    margin-top: 25%;
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+.contain{
+    justify-content: space-between;
+}
+
+/*Color options per pencil, crayon, and paint*/
+
+#option1 {
+    opacity: 0.5;
+    background-color: red;
+}
+
+#option2 {
+    opacity: 0.5;
+    background-color: blue;
+}
+
+#option3 {
+    opacity: 0.5;
+    background-color: green;
+}
+
+#option4 {
+    opacity: 0.5;
+    background-color:  yellow;
+}
+
+#option5 {
+    opacity: 0.5;
+    background-color: black;
+}
+
+#option6 {
+    opacity: 0.5;
+    background-color: white;
+}
+
+#option1:hover, #option2:hover, #option3:hover, #option4:hover, #option5:hover, #option6:hover {
+    opacity: 1;
+    border: 2px solid wheat;
+}
+
+/*Media query for xl screens*/
+
+@media screen and (min-width:1742px) {
+
+    canvas{
+        width: 60%;
+        height: 95%;
+        position: absolute;
+
+        top: 10%;
+        left: 20%;
+
+        border: 7px solid #C89B86;
+        background-color: white;
+        border-radius: 15px;
+        cursor: crosshair;
+    }
+}
+
+/*Media query for l screen*/
+
+@media (max-width:1528px) {
+    .background{
+        background-image: url(Backgrounds/alt-bg-tab.jpg);
+    }
+
+    .contain {
+        position: absolute;
+        left: 47%;
+        transform: translateX(-50%);
+        bottom: 30px;
+      }
+
+
+    .tool-bar{
+        display: flex;
+    }
+
+    .tool-bar-right{
+        display: flex;
+        margin-top: 5%;
+    }
+
+    .tool-item{
+        flex-direction: column-reverse;
+    }
+
+    .color-option{
+        display: table-cell;
+    }
+
+    img{
+        width: 60px;
+        height: 60px;
+        margin: 10px 0% 9px 30px;
+    }
+
+    .my-toggler{
+        position: absolute;
+        bottom: 30px;
+        left: 45%;
+    }
+
+    canvas{
+        border: 4px solid lightgray;
+        top: 30px;
+        width: 90%;
+        height: 70%;
+        left: 5%;
+    }
+}
+
+/*Media query for m screen*/
+@media (max-width:880px) {
+
+    .background{
+        background-image: url(Backgrounds/alt-bg.jpg);
+    }
+
+    .contain {
+        transform: translateX(-50%);
+        margin: auto;
+      }
+
+
+    img{
+        width: 45px;
+        height: 45px;
+        margin: 10px 0% 9px 30px;
+    }
+
+    canvas{
+        top: 30px;
+        border: 4px solid lightgray;
+        margin-left: 0;
+        width: 90%;
+        height: 70%;
+        left: 5%;
+    }
+
+    .my-toggler{
+        position: absolute;
+        bottom: 15%;
+        left: 40%;
+    }
+}
+
+
+/*Media query for s screen*/
+@media screen and (max-width:769px) {
+    .my-toggler{
+        position: absolute;
+        bottom: 20%;
+        left: 41%;
+    }
+
+    canvas{
+        top: 30px;
+        border: 4px solid lightgray;
+        margin-left: 0;
+        width: 90%;
+        height: 67%;
+        left: 6%;
+    }
+
+    img{
+        width: 38px;
+        height: 38px;
+        margin-bottom: 0;
+    }
+
+    .contain{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*Media query for xs screen*/
+@media (max-width:441px) {
+    .tool-bar-right{
+        width: 80%;
+        transform: translateX(15%);
+    }
 }
