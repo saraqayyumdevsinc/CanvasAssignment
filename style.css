@@ -131,7 +131,7 @@ img:hover {
 
     .contain {
         position: absolute;
-        left: 50%;
+        left: 47%;
         transform: translateX(-50%);
         bottom: 30px;
       }
@@ -203,10 +203,6 @@ img:hover {
         left: 5%;
     }
 
-    .tool-bar-right{
-        transform: translateX(15%);
-    }
-
     .my-toggler{
         position: absolute;
         bottom: 15%;
@@ -220,7 +216,7 @@ img:hover {
     .my-toggler{
         position: absolute;
         bottom: 18%;
-        left: 43%;
+        left: 41%;
     }
 
     canvas{
@@ -240,6 +236,7 @@ img:hover {
 
     .contain{
         flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -247,5 +244,6 @@ img:hover {
 @media (max-width:441px) {
     .tool-bar-right{
         width: 80%;
+        transform: translateX(15%);
     }
 }
