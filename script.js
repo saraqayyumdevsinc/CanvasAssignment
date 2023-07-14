@@ -42,18 +42,33 @@ $(document).ready(function() {
         isDrawingPencil = true;
         isDrawingCrayon = false;
         isDrawingPaint = false;
+
+        var crayon = document.querySelector('#crayon');
+        var paint = document.querySelector('#paint');
+        crayon.classList.remove('show');
+        paint.classList.remove('show');
     });
 
     $('.crayon').on('click', function() {
         isDrawingPencil = false;
         isDrawingCrayon = true;
         isDrawingPaint = false;
+
+        var pencil = document.querySelector('#pencil');
+        var paint = document.querySelector('#paint');
+        pencil.classList.remove('show');
+        paint.classList.remove('show');
     });
 
     $('.paint').on('click', function() {
         isDrawingPencil = false;
         isDrawingCrayon = false;
         isDrawingPaint = true;
+
+        var pencil = document.querySelector('#pencil');
+        var crayon = document.querySelector('#crayon');
+        pencil.classList.remove('show');
+        crayon.classList.remove('show');
     });
 
     //Saving image functionality
@@ -127,6 +142,13 @@ $(document).ready(function() {
             $(this).css('display','none')
         }
     })
+
+    $('.pencil').on('click', function() {
+        var crayon = document.querySelector('#crayon');
+        var paint = document.querySelector('#paint');
+        crayon.classList.remove('show');
+        paint.classList.remove('show');
+    });
 
     //Drawing functionality
     canvas.addEventListener('mousedown', function(event) {
