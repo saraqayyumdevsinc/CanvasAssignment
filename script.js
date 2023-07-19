@@ -229,13 +229,11 @@ $(document).ready(function() {
             imgElement.classList.remove('d-none');
             imgElement.classList.add('collapsed')
             iconContainer.classList.add('collapse')
-            contain.classList.remove('justify-content-between')
         }
         else{
             imgElement.classList.add('d-none');
             imgElement.classList.remove('collapsed')
             iconContainer.classList.remove('collapse')
-            contain.classList.add('justify-content-between')
         }
     }
 
